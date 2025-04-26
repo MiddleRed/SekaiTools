@@ -56,7 +56,7 @@ namespace SekaiTools.UI.NicknameCountShowcase
                 {
                     player.imageData.AppendAbstractValue(
                         imageKey,
-                        $"{EnvPath.Assets}/event/{masterEvent.assetbundleName}/logo_rip/logo.png");
+                        $"{EnvPath.Assets}/event/{masterEvent.assetbundleName}/logo/logo.png");
                 }
             }
             else

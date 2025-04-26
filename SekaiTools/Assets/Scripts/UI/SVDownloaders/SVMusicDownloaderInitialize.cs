@@ -56,8 +56,8 @@ namespace SekaiTools.UI.SVDownloaders
             foreach (var masterMusicVocal in masterMusicVocals)
             {
                 DownloadFileInfo downloadFileInfo = new DownloadFileInfo(
-                    $"{SekaiViewer.AssetUrl}/music/long/{masterMusicVocal.assetbundleName}_rip/{masterMusicVocal.assetbundleName}{gIP_SVMusic.format}",
-                    $"{gIP_SVMusic.saveFolder.SelectedPath}/{masterMusicVocal.assetbundleName}_rip/{masterMusicVocal.assetbundleName}{gIP_SVMusic.format}");
+                    $"{SekaiViewer.AssetUrl}/music/long/{masterMusicVocal.assetbundleName}/{masterMusicVocal.assetbundleName}{gIP_SVMusic.format}",
+                    $"{gIP_SVMusic.saveFolder.SelectedPath}/{masterMusicVocal.assetbundleName}/{masterMusicVocal.assetbundleName}{gIP_SVMusic.format}");
                 downloadFileInfos.Add(downloadFileInfo);
             }
             settings.downloadFiles = downloadFileInfos.ToArray();

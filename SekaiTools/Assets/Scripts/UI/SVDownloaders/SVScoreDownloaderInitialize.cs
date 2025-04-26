@@ -59,8 +59,8 @@ namespace SekaiTools.UI.SVScoreDownloaderInitialize
                 foreach (var difficulty in difficulties)
                 {
                     DownloadFileInfo downloadFileInfo = new DownloadFileInfo(
-                     $"{SekaiViewer.AssetUrl}/music/music_score/{masterMusic.id.ToString("0000")}_01_rip/{difficulty}.txt",
-                     $"{selectedPath}/{masterMusic.id.ToString("0000")}_01_rip/{difficulty}.txt");
+                     $"{SekaiViewer.AssetUrl}/music/music_score/{masterMusic.id.ToString("0000")}_01/{difficulty}.txt",
+                     $"{selectedPath}/{masterMusic.id.ToString("0000")}_01/{difficulty}.txt");
                     downloadFileInfos.Add(downloadFileInfo);
                 }
             }

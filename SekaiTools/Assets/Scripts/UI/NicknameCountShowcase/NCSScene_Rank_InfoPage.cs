@@ -93,7 +93,7 @@ namespace SekaiTools.UI.NicknameCountShowcase
                 {
                     scene_Rank.player.imageData.AppendAbstractValue(
                         imageKey,
-                        $"{EnvPath.Assets}/event/{ev.assetbundleName}/logo_rip/logo.png");
+                        $"{EnvPath.Assets}/event/{ev.assetbundleName}/logo/logo.png");
                 }
                 textInfoEvent.text = $@"在第 {eventMost.Key} 期活动 {ev.name} 中，
 {ConstData.characters[talkerId].Name} 一共提到了 {ConstData.characters[nameId].Name} {eventMost.Value} 次。";

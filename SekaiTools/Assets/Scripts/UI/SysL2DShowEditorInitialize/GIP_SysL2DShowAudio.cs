@@ -111,7 +111,7 @@ namespace SekaiTools.UI.SysL2DShowEditorInitialize
             {
                 foreach (var folder in directories)
                 {
-                    if(folder.Equals(sysL2DShow.systemLive2D.AssetbundleName) || folder.Equals($"{sysL2DShow.systemLive2D.AssetbundleName}_rip"))
+                    if(folder.Equals(sysL2DShow.systemLive2D.AssetbundleName) || folder.Equals($"{sysL2DShow.systemLive2D.AssetbundleName}"))
                     {
                         foreach (var file in files[folder])
                         {
@@ -140,8 +140,8 @@ namespace SekaiTools.UI.SysL2DShowEditorInitialize
             List<DownloadFileInfo> downloadFileInfos = new List<DownloadFileInfo>();
             foreach (var sysL2DShow in sysL2DShowData.sysL2DShows)
             {
-                string url = $"{SekaiViewer.AssetUrl}/sound/system_live2d/voice/{sysL2DShow.systemLive2D.AssetbundleName}_rip/{sysL2DShow.systemLive2D.Voice}.mp3";
-                string savePath = $"{EnvPath.AssetFolder}/assets/sound/system_live2d/voice/{sysL2DShow.systemLive2D.AssetbundleName}_rip/{sysL2DShow.systemLive2D.Voice}.mp3";
+                string url = $"{SekaiViewer.AssetUrl}/sound/system_live2d/voice/{sysL2DShow.systemLive2D.AssetbundleName}/{sysL2DShow.systemLive2D.Voice}.mp3";
+                string savePath = $"{EnvPath.AssetFolder}/assets/sound/system_live2d/voice/{sysL2DShow.systemLive2D.AssetbundleName}/{sysL2DShow.systemLive2D.Voice}.mp3";
                 downloadFileInfos.Add(new DownloadFileInfo(url, savePath));
             }
             Downloader.Downloader downloader

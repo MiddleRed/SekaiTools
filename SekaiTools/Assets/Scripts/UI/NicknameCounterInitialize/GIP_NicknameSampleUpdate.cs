@@ -57,11 +57,11 @@ namespace SekaiTools.UI.NicknameCounterInitialize
                 {
                     foreach (var masterUnitStoryEpisode in masterUnitStoryChapter.episodes)
                     {
-                        string url = $"{SekaiViewer.AssetUrl}/scenario/unitstory/{masterUnitStoryChapter.assetbundleName}_rip/{masterUnitStoryEpisode.scenarioId}.asset";
+                        string url = $"{SekaiViewer.AssetUrl}/scenario/unitstory/{masterUnitStoryChapter.assetbundleName}/{masterUnitStoryEpisode.scenarioId}.asset";
                         string savepath = null;
                         switch (fileStruct)
                         {
-                            case FileStruct.Server: savepath = $"{folder_Sample}/scenario/unitstory/{masterUnitStoryChapter.assetbundleName}_rip/{masterUnitStoryEpisode.scenarioId}.json";
+                            case FileStruct.Server: savepath = $"{folder_Sample}/scenario/unitstory/{masterUnitStoryChapter.assetbundleName}/{masterUnitStoryEpisode.scenarioId}.json";
                                 break;
                             case FileStruct.Classic: savepath = $"{folder_Sample}/{NicknameCountData.unitStoriesFolder}/{masterUnitStoryEpisode.scenarioId}.json";
                                 break;
@@ -83,12 +83,12 @@ namespace SekaiTools.UI.NicknameCounterInitialize
             {
                 foreach (var eventStoryEpisode in masterEventStory.eventStoryEpisodes)
                 {
-                    string url = $"{SekaiViewer.AssetUrl}/event_story/{masterEventStory.assetbundleName}/scenario_rip/{eventStoryEpisode.scenarioId}.asset";
+                    string url = $"{SekaiViewer.AssetUrl}/event_story/{masterEventStory.assetbundleName}/scenario/{eventStoryEpisode.scenarioId}.asset";
                     string savepath = null;
                     switch (fileStruct)
                     {
                         case FileStruct.Server:
-                            savepath = $"{folder_Sample}/event_story/{masterEventStory.assetbundleName}/scenario_rip/{eventStoryEpisode.scenarioId}.json";
+                            savepath = $"{folder_Sample}/event_story/{masterEventStory.assetbundleName}/scenario/{eventStoryEpisode.scenarioId}.json";
                             break;
                         case FileStruct.Classic:
                             savepath = $"{folder_Sample}/{NicknameCountData.eventStoriesFolder}/{eventStoryEpisode.scenarioId}.json";
@@ -108,12 +108,12 @@ namespace SekaiTools.UI.NicknameCounterInitialize
             List<DownloadFileInfo> downloadFileInfos = new List<DownloadFileInfo>();
             foreach (var masterCardEpisode in masterCardEpisodes)
             {
-                string url = $"{SekaiViewer.AssetUrl}/character/member/{masterCardEpisode.assetbundleName}_rip/{masterCardEpisode.scenarioId}.asset";
+                string url = $"{SekaiViewer.AssetUrl}/character/member/{masterCardEpisode.assetbundleName}/{masterCardEpisode.scenarioId}.asset";
                 string savepath = null;
                 switch (fileStruct)
                 {
                     case FileStruct.Server:
-                        savepath = $"{folder_Sample}/character/member/{masterCardEpisode.assetbundleName}_rip/{masterCardEpisode.scenarioId}.json";
+                        savepath = $"{folder_Sample}/character/member/{masterCardEpisode.assetbundleName}/{masterCardEpisode.scenarioId}.json";
                         break;
                     case FileStruct.Classic:
                         savepath = $"{folder_Sample}/{NicknameCountData.cardStoriesFolder}/{masterCardEpisode.scenarioId}.json";
@@ -133,12 +133,12 @@ namespace SekaiTools.UI.NicknameCounterInitialize
             foreach (var masterActionSet in masterActionSets)
             {
                 if (masterActionSet.id <= 4) continue;
-                string url = $"{SekaiViewer.AssetUrl}/scenario/actionset/group{masterActionSet.id/100}_rip/{masterActionSet.scenarioId}.asset";
+                string url = $"{SekaiViewer.AssetUrl}/scenario/actionset/group{masterActionSet.id/100}/{masterActionSet.scenarioId}.asset";
                 string savepath = null;
                 switch (fileStruct)
                 {
                     case FileStruct.Server:
-                        savepath = $"{folder_Sample}/scenario/actionset/group{masterActionSet.id / 100}_rip/{masterActionSet.scenarioId}.json";
+                        savepath = $"{folder_Sample}/scenario/actionset/group{masterActionSet.id / 100}/{masterActionSet.scenarioId}.json";
                         break;
                     case FileStruct.Classic:
                         savepath = $"{folder_Sample}/{NicknameCountData.mapTalkFolder}/{masterActionSet.scenarioId}.json";
@@ -160,12 +160,12 @@ namespace SekaiTools.UI.NicknameCounterInitialize
                 foreach (var masterVirtualLiveSetlist in masterVirtualLive.virtualLiveSetlists)
                 {
                     if (masterVirtualLiveSetlist.VirtualLiveSetlistType != VirtualLiveSetlistType.mc) continue;
-                    string url = $"{SekaiViewer.AssetUrl}/virtual_live/mc/scenario/{masterVirtualLiveSetlist.assetbundleName}_rip/{masterVirtualLiveSetlist.assetbundleName}.asset";
+                    string url = $"{SekaiViewer.AssetUrl}/virtual_live/mc/scenario/{masterVirtualLiveSetlist.assetbundleName}/{masterVirtualLiveSetlist.assetbundleName}.asset";
                     string savepath = null;
                     switch (fileStruct)
                     {
                         case FileStruct.Server:
-                            savepath = $"{folder_Sample}/virtual_live/mc/scenario/{masterVirtualLiveSetlist.assetbundleName}_rip/{masterVirtualLiveSetlist.assetbundleName}.json";
+                            savepath = $"{folder_Sample}/virtual_live/mc/scenario/{masterVirtualLiveSetlist.assetbundleName}/{masterVirtualLiveSetlist.assetbundleName}.json";
                             break;
                         case FileStruct.Classic:
                             savepath = $"{folder_Sample}/{NicknameCountData.liveTalkFolder}/{masterVirtualLiveSetlist.assetbundleName}.json";
@@ -184,12 +184,12 @@ namespace SekaiTools.UI.NicknameCounterInitialize
             List<DownloadFileInfo> downloadFileInfos = new List<DownloadFileInfo>();
             for (int i = 1; i < 27; i++)
             {
-                string url = $"{SekaiViewer.AssetUrl}/scenario/profile_rip/self_{(Character)i}.asset";
+                string url = $"{SekaiViewer.AssetUrl}/scenario/profile/self_{(Character)i}.asset";
                 string savepath = null;
                 switch (fileStruct)
                 {
                     case FileStruct.Server:
-                        savepath = $"{folder_Sample}/scenario/profile_rip/self_{(Character)i}.json";
+                        savepath = $"{folder_Sample}/scenario/profile/self_{(Character)i}.json";
                         break;
                     case FileStruct.Classic:
                         savepath = $"{folder_Sample}/{NicknameCountData.otherStoriesFolder}/self_{(Character)i}.json";
@@ -205,12 +205,12 @@ namespace SekaiTools.UI.NicknameCounterInitialize
             {
                 foreach (var masterSpecialStoryEpisode in masterSpecialStory.episodes)
                 {
-                    string url = $"{SekaiViewer.AssetUrl}/scenario/special/{masterSpecialStoryEpisode.assetbundleName}_rip/{masterSpecialStoryEpisode.scenarioId}.asset";
+                    string url = $"{SekaiViewer.AssetUrl}/scenario/special/{masterSpecialStoryEpisode.assetbundleName}/{masterSpecialStoryEpisode.scenarioId}.asset";
                     string savepath = null;
                     switch (fileStruct)
                     {
                         case FileStruct.Server:
-                            savepath = $"{folder_Sample}/scenario/special/{masterSpecialStoryEpisode.assetbundleName}_rip/{masterSpecialStoryEpisode.scenarioId}.json";
+                            savepath = $"{folder_Sample}/scenario/special/{masterSpecialStoryEpisode.assetbundleName}/{masterSpecialStoryEpisode.scenarioId}.json";
                             break;
                         case FileStruct.Classic:
                             savepath = $"{folder_Sample}/{NicknameCountData.otherStoriesFolder}/{masterSpecialStoryEpisode.scenarioId}.json";

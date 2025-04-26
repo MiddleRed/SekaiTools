@@ -66,7 +66,7 @@ namespace SekaiTools.UI.L2DModelDownloader
 
         public void Apply()
         {
-            string buildmodeldataURL = $"{SekaiViewer.AssetUrl}/live2d/model/{SelectedModelName}_rip/buildmodeldata.asset";
+            string buildmodeldataURL = $"{SekaiViewer.AssetUrl}/live2d/model/{SelectedModelName}/buildmodeldata.asset";
             string tempFile = Path.GetTempFileName();
             DownloadFileInfo downloadFileInfoIter1 = new DownloadFileInfo(buildmodeldataURL, tempFile);
             Downloader.Downloader downloaderIter1 = window.OpenWindow<Downloader.Downloader>(downloaderPrefab);
@@ -79,7 +79,7 @@ namespace SekaiTools.UI.L2DModelDownloader
                 if(downloaderIter1.HasError)
                 {
                     downloaderIter1.EnableLogView();
-                    WindowController.ShowMessage(Message.Error.STR_ERROR, "»ñÈ¡Ä£ÐÍÐÅÏ¢Ê§°Ü");
+                    WindowController.ShowMessage(Message.Error.STR_ERROR, "ï¿½ï¿½È¡Ä£ï¿½ï¿½ï¿½ï¿½Ï¢Ê§ï¿½ï¿½");
                     return;
                 }
                 downloaderIter1.window.Close();
@@ -88,15 +88,15 @@ namespace SekaiTools.UI.L2DModelDownloader
                 List<DownloadFileInfo> downloadFileInfos = new List<DownloadFileInfo>();
                 DownloadFileInfo moc3FileInfo = new DownloadFileInfo
                 (
-                    $"{SekaiViewer.AssetUrl}/live2d/model/{SelectedModelName}_rip/{buildModelData.Moc3FileName}",
-                    $"{EnvPath.AssetFolder}/assets/live2d/model/{SelectedModelName}_rip/{selectedModelName}.moc3"
+                    $"{SekaiViewer.AssetUrl}/live2d/model/{SelectedModelName}/{buildModelData.Moc3FileName}",
+                    $"{EnvPath.AssetFolder}/assets/live2d/model/{SelectedModelName}/{selectedModelName}.moc3"
                 );
                 downloadFileInfos.Add(moc3FileInfo);
 
                 DownloadFileInfo physicsFileInfo = new DownloadFileInfo
                 (
-                    $"{SekaiViewer.AssetUrl}/live2d/model/{SelectedModelName}_rip/{buildModelData.PhysicsFileName}",
-                    $"{EnvPath.AssetFolder}/assets/live2d/model/{SelectedModelName}_rip/{selectedModelName}.physics3.json"
+                    $"{SekaiViewer.AssetUrl}/live2d/model/{SelectedModelName}/{buildModelData.PhysicsFileName}",
+                    $"{EnvPath.AssetFolder}/assets/live2d/model/{SelectedModelName}/{selectedModelName}.physics3.json"
                 );
                 downloadFileInfos.Add(physicsFileInfo);
 
@@ -105,8 +105,8 @@ namespace SekaiTools.UI.L2DModelDownloader
                 {
                     DownloadFileInfo textureFileInfo = new DownloadFileInfo
                     (
-                        $"{SekaiViewer.AssetUrl}/live2d/model/{SelectedModelName}_rip/{textureName}",
-                        $"{EnvPath.AssetFolder}/assets/live2d/model/{SelectedModelName}_rip/{SelectedModelName}.2048/{Path.GetFileName(textureName)}"
+                        $"{SekaiViewer.AssetUrl}/live2d/model/{SelectedModelName}/{textureName}",
+                        $"{EnvPath.AssetFolder}/assets/live2d/model/{SelectedModelName}/{SelectedModelName}.2048/{Path.GetFileName(textureName)}"
                     );
                     downloadFileInfos.Add(textureFileInfo);
                     texturePaths.Add($"{SelectedModelName}.2048/{Path.GetFileName(textureName)}");
@@ -123,11 +123,11 @@ namespace SekaiTools.UI.L2DModelDownloader
                     if (downloaderIter2.HasError)
                     {
                         downloaderIter2.EnableLogView();
-                        WindowController.ShowMessage(Message.Error.STR_ERROR, "ÏÂÔØÄ£ÐÍÊ§°Ü");
+                        WindowController.ShowMessage(Message.Error.STR_ERROR, "ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½Ê§ï¿½ï¿½");
                         return;
                     }
                     downloaderIter2.window.Close();
-                    string model3Path = $"{EnvPath.AssetFolder}/assets/live2d/model/{SelectedModelName}_rip/{selectedModelName}.model3.json";
+                    string model3Path = $"{EnvPath.AssetFolder}/assets/live2d/model/{SelectedModelName}/{selectedModelName}.model3.json";
                     Model3 model3 = new Model3(
                         Path.GetFileName(moc3FileInfo.savePath),
                         texturePaths.ToArray(),

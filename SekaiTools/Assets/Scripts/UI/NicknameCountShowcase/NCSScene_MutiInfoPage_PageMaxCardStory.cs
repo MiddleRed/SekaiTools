@@ -74,7 +74,7 @@ namespace SekaiTools.UI.NicknameCountShowcase
                 {
                     player.imageData.AppendAbstractValue(
                         imageKey,
-                        $"{EnvPath.Assets}/thumbnail/chara_rip/{card.assetbundleName}_normal.png");
+                        $"{EnvPath.Assets}/thumbnail/chara/{card.assetbundleName}_normal.png");
                 }
                 imgCardFrame.sprite = cardFrameSet.icons[(int)card.RarityType];
             }

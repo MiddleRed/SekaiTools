@@ -79,8 +79,8 @@ namespace SekaiTools.UI.KizunaSceneEditorInitialize
             {
                 foreach (var image in new string[] { kizunaScene.textSpriteLv1, kizunaScene.textSpriteLv2, kizunaScene.textSpriteLv3 })
                 {
-                    string urlF = $"{SekaiViewer.AssetUrl}/bonds_honor/word/{image}_rip/{image}.png";
-                    string savePathF = $"{EnvPath.AssetFolder}/assets/bonds_honor/word/{image}_rip/{image}.png";
+                    string urlF = $"{SekaiViewer.AssetUrl}/bonds_honor/word/{image}/{image}.png";
+                    string savePathF = $"{EnvPath.AssetFolder}/assets/bonds_honor/word/{image}/{image}.png";
                     downloadFileInfos.Add(new DownloadFileInfo(urlF, savePathF));
                 }
             }
@@ -137,7 +137,7 @@ namespace SekaiTools.UI.KizunaSceneEditorInitialize
                 {
                     foreach (var keyValuePair in files)
                     {
-                        if (keyValuePair.Key.Equals(image) || keyValuePair.Key.Equals($"{image}_rip"))
+                        if (keyValuePair.Key.Equals(image) || keyValuePair.Key.Equals($"{image}"))
                         {
                             foreach (var file in files[keyValuePair.Key])
                             {

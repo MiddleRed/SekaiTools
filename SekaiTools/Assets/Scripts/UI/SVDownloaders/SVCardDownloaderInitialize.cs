@@ -50,16 +50,16 @@ namespace SekaiTools.UI.SVDownloaders
                     if (!selectedCharacters.Contains(masterCard.characterId)) continue;
 
                     DownloadFileInfo downloadFileInfo = new DownloadFileInfo(
-                        $"{SekaiViewer.AssetUrl}/character/member/{masterCard.assetbundleName}_rip/card_normal{gIP_SVCard.format}",
-                        $"{gIP_SVCard.folderSelectItem.SelectedPath}/{masterCard.assetbundleName}_rip/card_normal{gIP_SVCard.format}");
+                        $"{SekaiViewer.AssetUrl}/character/member/{masterCard.assetbundleName}/card_normal{gIP_SVCard.format}",
+                        $"{gIP_SVCard.folderSelectItem.SelectedPath}/{masterCard.assetbundleName}/card_normal{gIP_SVCard.format}");
                     downloadFileInfos.Add(downloadFileInfo);
 
                     CardRarityType rarityType = masterCard.RarityType;
                     if (rarityType == CardRarityType.rarity_3 || rarityType == CardRarityType.rarity_4)
                     {
                         DownloadFileInfo downloadFileInfo_at = new DownloadFileInfo(
-                            $"{SekaiViewer.AssetUrl}/character/member/{masterCard.assetbundleName}_rip/card_after_training{gIP_SVCard.format}",
-                            $"{gIP_SVCard.folderSelectItem.SelectedPath}/{masterCard.assetbundleName}_rip/card_after_training{gIP_SVCard.format}");
+                            $"{SekaiViewer.AssetUrl}/character/member/{masterCard.assetbundleName}/card_after_training{gIP_SVCard.format}",
+                            $"{gIP_SVCard.folderSelectItem.SelectedPath}/{masterCard.assetbundleName}/card_after_training{gIP_SVCard.format}");
                         downloadFileInfos.Add(downloadFileInfo_at);
                     }
                 }

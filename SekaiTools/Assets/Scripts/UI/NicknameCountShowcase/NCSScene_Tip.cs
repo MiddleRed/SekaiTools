@@ -49,7 +49,7 @@ namespace SekaiTools.UI.NicknameCountShowcase
                 {
                     player.imageData.AppendAbstractValue(
                         imageKey,
-                        $"{EnvPath.Assets}/event/{ev.assetbundleName}/logo_rip/logo.png");
+                        $"{EnvPath.Assets}/event/{ev.assetbundleName}/logo/logo.png");
                 }
                 txtTip.text = @$"统计范围：从开服到第{ev.id}次活动「{ev.name}」的活动剧情、
 地图对话、卡面剧情、Live对话；以及主线剧情、自我介绍、

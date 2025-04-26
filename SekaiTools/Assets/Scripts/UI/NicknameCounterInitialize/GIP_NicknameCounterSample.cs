@@ -97,7 +97,7 @@ namespace SekaiTools.UI.NicknameCounterInitialize
                 string[] folderSubs = new string[]
                 {
                     Path.Combine(folder, "scenario"),
-                    Path.Combine(folder, "scenario_rip")
+                    Path.Combine(folder, "scenario")
                 };
                 foreach (var folderSub in folderSubs)
                 {
@@ -190,7 +190,7 @@ namespace SekaiTools.UI.NicknameCounterInitialize
             List<string> files = new List<string>();
             for (int i = 1; i < 27; i++)
             {
-                files.Add($"{folder_Sample}/scenario/profile_rip/self_{(Character)i}.json");
+                files.Add($"{folder_Sample}/scenario/profile/self_{(Character)i}.json");
             }
 
             string folderBase = $"{folder_Sample}/scenario/special";

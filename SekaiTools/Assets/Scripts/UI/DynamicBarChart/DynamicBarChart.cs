@@ -96,7 +96,7 @@ namespace SekaiTools.UI.DynamicBarChart
                 {
                     player.imageData.AppendAbstractValue(
                         imageKey,
-                        $"{EnvPath.Assets}/event/{ev.assetbundleName}/logo_rip/logo.png");
+                        $"{EnvPath.Assets}/event/{ev.assetbundleName}/logo/logo.png");
                 }
             }
         }

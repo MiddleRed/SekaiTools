@@ -16,8 +16,8 @@ public class DownloadDegreeIcons : MonoBehaviour
         {
             DownloadFileInfo downloadFileInfo = new DownloadFileInfo
                 (
-                $"{SekaiTools.SekaiViewerInterface.SekaiViewer.AssetUrl}/bonds_honor/character/chr_sd_{i:00}_01_rip/chr_sd_{i:00}_01.png",
-                $"{EnvPath.Assets}/bonds_honor/character/chr_sd_{i:00}_01_rip/chr_sd_{i:00}_01.png"
+                $"{SekaiTools.SekaiViewerInterface.SekaiViewer.AssetUrl}/bonds_honor/character/chr_sd_{i:00}_01/chr_sd_{i:00}_01.png",
+                $"{EnvPath.Assets}/bonds_honor/character/chr_sd_{i:00}_01/chr_sd_{i:00}_01.png"
                 );
             downloadFileInfos.Add(downloadFileInfo);
         }

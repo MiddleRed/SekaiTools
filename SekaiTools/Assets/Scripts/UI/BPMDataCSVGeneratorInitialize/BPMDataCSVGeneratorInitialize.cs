@@ -35,7 +35,7 @@ namespace SekaiTools.UI.BPMDataCSVGeneratorInitialize
                 List<string> outputValues = new List<string>();
                 outputValues.Add(masterMusic.id.ToString("0000"));
                 outputValues.Add(masterMusic.title);
-                string path = $"{gIP_PathSelect_Input.pathSelectItems[0].SelectedPath}\\{masterMusic.id.ToString("0000")}_01_rip\\master.txt";
+                string path = $"{gIP_PathSelect_Input.pathSelectItems[0].SelectedPath}\\{masterMusic.id.ToString("0000")}_01\\master.txt";
                 if (File.Exists(path))
                 {
                     IEnumerable<string> lines = File.ReadLines(path);
@@ -56,7 +56,7 @@ namespace SekaiTools.UI.BPMDataCSVGeneratorInitialize
             }
 
             File.WriteAllLines(gIP_PathSelect_Output.pathSelectItems[0].SelectedPath, outputLines);
-            WindowController.ShowMessage("ÏûÏ¢", "Éú³ÉÍê³É");
+            WindowController.ShowMessage("ï¿½ï¿½Ï¢", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
         }
     }
 }

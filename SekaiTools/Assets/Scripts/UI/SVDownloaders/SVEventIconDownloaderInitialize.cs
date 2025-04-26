@@ -54,8 +54,8 @@ namespace SekaiTools.UI.SVScoreDownloaderInitialize
             foreach (var masterEvent in masterEvents)
             {
                 DownloadFileInfo downloadFileInfo = new DownloadFileInfo(
-                 $"{SekaiViewer.AssetUrl}/event/{masterEvent.assetbundleName}/logo_rip/logo.png",
-                 $"{selectedPath}/{masterEvent.assetbundleName}/logo_rip/logo.png");
+                 $"{SekaiViewer.AssetUrl}/event/{masterEvent.assetbundleName}/logo/logo.png",
+                 $"{selectedPath}/{masterEvent.assetbundleName}/logo/logo.png");
                 downloadFileInfos.Add(downloadFileInfo);
             }
             settings.downloadFiles = downloadFileInfos.ToArray();

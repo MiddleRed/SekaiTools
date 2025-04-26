@@ -55,7 +55,7 @@ namespace SekaiTools.UI.Radio
         public MusicInQueue[] PlayList => musicQueue.ToArray();
 
         /// <summary>
-        /// Ìí¼Óµ½ÊÂ¼þonMusicChange£¬´¥·¢Ê±Í£Ö¹µÈ´ý
+        /// ï¿½ï¿½ï¿½Óµï¿½ï¿½Â¼ï¿½onMusicChangeï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±Í£Ö¹ï¿½È´ï¿½
         /// </summary>
         public class WaitForMusicChanged : CustomYieldInstruction
         {
@@ -77,7 +77,7 @@ namespace SekaiTools.UI.Radio
             }
         }
 
-        #region ³õÊ¼»¯
+        #region ï¿½ï¿½Ê¼ï¿½ï¿½
 
         public void Initialize(Settings settings)
         {
@@ -147,7 +147,7 @@ namespace SekaiTools.UI.Radio
             {
                 foreach (var extension in extensions)
                 {
-                    string path = Path.Combine(folder, $"{masterMusicVocal.assetbundleName}_rip",masterMusicVocal.assetbundleName + extension);
+                    string path = Path.Combine(folder, $"{masterMusicVocal.assetbundleName}",masterMusicVocal.assetbundleName + extension);
                     if (File.Exists(path))
                     {
                         List<string> singers = new List<string>();
@@ -228,11 +228,11 @@ namespace SekaiTools.UI.Radio
             public MasterMusicTag[] masterMusicTags;
 
             /// <summary>
-            /// SekaiViewer¸èÇúÎÄ¼þ¼Ð£¬Áô¿ÕÒÔÌø¹ý¼ÓÔØ
+            /// SekaiViewerï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             /// </summary>
             public string musicFolderSV;
             /// <summary>
-            /// Íâ²¿¸èÇúÎÄ¼þ¼Ð£¬Áô¿ÕÒÔÌø¹ý¼ÓÔØ
+            /// ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             /// </summary>
             public string musicFolderOutside;
 
@@ -281,7 +281,7 @@ namespace SekaiTools.UI.Radio
 
         private void ShowMusicInfo(MusicInQueue playMusic)
         {
-            textMusicTitle.text = $"ÕýÔÚ²¥·Å - {playMusic.musicData.masterMusic.composer}\n{playMusic.musicData.masterMusic.title}";
+            textMusicTitle.text = $"ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ - {playMusic.musicData.masterMusic.composer}\n{playMusic.musicData.masterMusic.title}";
 
             if (playMusic.vocalData.singers.Length != 0)
             {
@@ -290,7 +290,7 @@ namespace SekaiTools.UI.Radio
                 {
                     singerStrs.Add(singer.Replace(" ", string.Empty));
                 }
-                textVocalSinger.text = $"Vo. {string.Join("¡¢", singerStrs)}";
+                textVocalSinger.text = $"Vo. {string.Join("ï¿½ï¿½", singerStrs)}";
             }
             else
             {
@@ -315,7 +315,7 @@ namespace SekaiTools.UI.Radio
         public MusicInQueue SelectNextMusic()
         {
             MusicInQueue selectedMusic = null;
-            //Èç¹û²¥·ÅÁÐ±íÎª¿Õ
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½Îªï¿½ï¿½
             if(musicQueue.Count==0)
             {
                 if (unusedMusicSet.Count == 0)
@@ -336,7 +336,7 @@ namespace SekaiTools.UI.Radio
                 unusedMusicSet.RemoveAt(rdmId);
                 StartCoroutine(randomMusic.LoadMusic());
             }
-            //Èç¹û²¥·ÅÁÐ±í²»Îª¿Õ
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½Îªï¿½ï¿½
             else
             {
                 selectedMusic = musicQueue.Dequeue();
@@ -356,18 +356,18 @@ namespace SekaiTools.UI.Radio
 
             if (musicQueue.Count == 0)
             {
-                strQueueLength = "µ±Ç°²¥·ÅÁÐ±íÎª¿Õ";
-                strNextMusic = "ÏÂÒ»Ê× - Ëæ»ú¸èÇú";
+                strQueueLength = "ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½Îªï¿½ï¿½";
+                strNextMusic = "ï¿½ï¿½Ò»ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
             }
             else if (musicQueue.Count == maxPlaylistLength)
             {
-                strQueueLength = $"µ±Ç°²¥·ÅÁÐ±í³¤¶ÈÎª {musicQueue.Count}£¬²¥·ÅÁÐ±íÒÑÂú";
-                strNextMusic = $"ÏÂÒ»Ê× - {musicQueue.Peek().musicData.masterMusic.title}";
+                strQueueLength = $"ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½Îª {musicQueue.Count}ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½";
+                strNextMusic = $"ï¿½ï¿½Ò»ï¿½ï¿½ - {musicQueue.Peek().musicData.masterMusic.title}";
             }
             else
             {
-                strQueueLength = $"µ±Ç°²¥·ÅÁÐ±í³¤¶ÈÎª {musicQueue.Count}";
-                strNextMusic = $"ÏÂÒ»Ê× - {musicQueue.Peek().musicData.masterMusic.title}";
+                strQueueLength = $"ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½Îª {musicQueue.Count}";
+                strNextMusic = $"ï¿½ï¿½Ò»ï¿½ï¿½ - {musicQueue.Peek().musicData.masterMusic.title}";
             }
 
             textQueueLength.text = strQueueLength;
@@ -408,22 +408,22 @@ namespace SekaiTools.UI.Radio
         {
             MusicInQueue musicInQueue = GetVocal(musicOrderInfo);
             if (musicInQueue == null||musicInQueue.vocalData==null)
-                return new RadioMessage(userName, MessageType.error, "Î´ÕÒµ½·ûºÏÌõ¼þµÄ¸èÇú");
+                return new RadioMessage(userName, MessageType.error, "Î´ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½");
             if (bannedMusics.Contains(musicInQueue.musicData.id))
-                return new RadioMessage(userName, MessageType.error, $"´ËµçÌ¨²»¿É²¥·Å {musicInQueue.musicData.masterMusic.title}");
+                return new RadioMessage(userName, MessageType.error, $"ï¿½Ëµï¿½Ì¨ï¿½ï¿½ï¿½É²ï¿½ï¿½ï¿½ {musicInQueue.musicData.masterMusic.title}");
             MusicInQueue[] musicInArray = musicQueue.ToArray();
             foreach (var music in musicInArray)
             {
                 if(music.musicData == musicInQueue.musicData)
-                    return new RadioMessage(userName, MessageType.error, $"²¥·ÅÁÐ±íÖÐÒÑÓÐ {musicInQueue.musicData.masterMusic.title}");
+                    return new RadioMessage(userName, MessageType.error, $"ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ {musicInQueue.musicData.masterMusic.title}");
             }
             musicQueue.Enqueue(musicInQueue);
             if (musicQueue.Count == 1)
                 StartCoroutine(musicQueue.Peek().LoadMusic());
             onAddMusic(musicInQueue);
             RefreshPlaylist();
-            Debug.Log($"@{userName} µã¸è³É¹¦ {musicInQueue.musicData.masterMusic.title}£¬Vo. {string.Join("¡¢", musicInQueue.vocalData.singers)}");
-            return new RadioMessage(userName, MessageType.success, $"µã¸è³É¹¦ {musicInQueue.musicData.masterMusic.title}");
+            Debug.Log($"@{userName} ï¿½ï¿½ï¿½É¹ï¿½ {musicInQueue.musicData.masterMusic.title}ï¿½ï¿½Vo. {string.Join("ï¿½ï¿½", musicInQueue.vocalData.singers)}");
+            return new RadioMessage(userName, MessageType.success, $"ï¿½ï¿½ï¿½É¹ï¿½ {musicInQueue.musicData.masterMusic.title}");
         }
 
         private void Update()

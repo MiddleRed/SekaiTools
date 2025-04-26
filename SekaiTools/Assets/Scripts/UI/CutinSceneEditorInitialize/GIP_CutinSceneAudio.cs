@@ -63,7 +63,7 @@ namespace SekaiTools.UI.CutinSceneEditorInitialize
         public void RefreshInfo()
         {
             if (serializedAudioData == null)
-                txt_DataInfo.text = "ÇëÑ¡ÔñÎÄ¼þ";
+                txt_DataInfo.text = "ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ä¼ï¿½";
             else
             {
                 MediaMatchInfo audioMatchInfo = serializedAudioData.GetAudioMatchInfo(
@@ -71,7 +71,7 @@ namespace SekaiTools.UI.CutinSceneEditorInitialize
                     .Select((cs) => cs.talkData_First.talkVoice)
                     .Concat(cutinSceneData.cutinScenes
                     .Select((cs) => cs.talkData_First.talkVoice)));
-                txt_DataInfo.text = $"ÔÚ{cutinSceneData.cutinScenes.Count*2}¶ÎÓïÒôÖÐ£¬ÓÐ{audioMatchInfo.matchcing}¶ÎÆ¥Åä£¬ÓÐ{audioMatchInfo.missingKey}¶ÎÈ±Ê§£¬ÓÐ{audioMatchInfo.missingFile}¶ÎÎÄ¼þ¶ªÊ§";
+                txt_DataInfo.text = $"ï¿½ï¿½{cutinSceneData.cutinScenes.Count*2}ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½{audioMatchInfo.matchcing}ï¿½ï¿½Æ¥ï¿½ä£¬ï¿½ï¿½{audioMatchInfo.missingKey}ï¿½ï¿½È±Ê§ï¿½ï¿½ï¿½ï¿½{audioMatchInfo.missingFile}ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ê§";
             }
         }
 
@@ -79,8 +79,8 @@ namespace SekaiTools.UI.CutinSceneEditorInitialize
         {
             List<string> errors = new List<string>();
             if (serializedAudioData == null)
-                errors.Add("Î´ÉèÖÃÒôÆµ×ÊÁÏ»òÎÄ¼þËð»µ");
-            return GenericInitializationCheck.GetErrorString("ÒôÆµ×ÊÁÏ´íÎó", errors);
+                errors.Add("Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½Ï»ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½");
+            return GenericInitializationCheck.GetErrorString("ï¿½ï¿½Æµï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½", errors);
         }
 
         public void CreateData()
@@ -107,12 +107,12 @@ namespace SekaiTools.UI.CutinSceneEditorInitialize
                 CutinVoiceInfo cutinVoiceInfoF = new CutinVoiceInfo(CutinVoiceType.bondscp, cutinScene.charFirstID, cutinScene.charSecondID, CutinVoiceOrder.first, cutinScene.dataID);
                 CutinVoiceInfo cutinVoiceInfoS = new CutinVoiceInfo(CutinVoiceType.bondscp, cutinScene.charFirstID, cutinScene.charSecondID, CutinVoiceOrder.second, cutinScene.dataID);
                 
-                string urlF = $"{SekaiViewer.AssetUrl}/live/voice/cutin/{cutinVoiceInfoF.StandardizeName}_rip/{cutinVoiceInfoF.StandardizeName}.mp3";
-                string savePathF = $"{EnvPath.AssetFolder}/assets/live/voice/cutin/{cutinVoiceInfoF.StandardizeName}_rip/{cutinVoiceInfoF.StandardizeName}.mp3";
+                string urlF = $"{SekaiViewer.AssetUrl}/live/voice/cutin/{cutinVoiceInfoF.StandardizeName}/{cutinVoiceInfoF.StandardizeName}.mp3";
+                string savePathF = $"{EnvPath.AssetFolder}/assets/live/voice/cutin/{cutinVoiceInfoF.StandardizeName}/{cutinVoiceInfoF.StandardizeName}.mp3";
                 downloadFileInfos.Add(new DownloadFileInfo(urlF, savePathF));
 
-                string urlS = $"{SekaiViewer.AssetUrl}/live/voice/cutin/{cutinVoiceInfoS.StandardizeName}_rip/{cutinVoiceInfoS.StandardizeName}.mp3";
-                string savePathS = $"{EnvPath.AssetFolder}/assets/live/voice/cutin/{cutinVoiceInfoS.StandardizeName}_rip/{cutinVoiceInfoS.StandardizeName}.mp3";
+                string urlS = $"{SekaiViewer.AssetUrl}/live/voice/cutin/{cutinVoiceInfoS.StandardizeName}/{cutinVoiceInfoS.StandardizeName}.mp3";
+                string savePathS = $"{EnvPath.AssetFolder}/assets/live/voice/cutin/{cutinVoiceInfoS.StandardizeName}/{cutinVoiceInfoS.StandardizeName}.mp3";
                 downloadFileInfos.Add(new DownloadFileInfo(urlS, savePathS));
             }
             Downloader.Downloader downloader
@@ -128,7 +128,7 @@ namespace SekaiTools.UI.CutinSceneEditorInitialize
                 if (downloader.HasError)
                 {
                     downloader.EnableLogView();
-                    WindowController.ShowMessage(Message.Error.STR_ERROR, "´æÔÚÎ´ÄÜÏÂÔØµÄÎÄ¼þ£¬´´½¨µÄÒôÆµ×ÊÁÏ²»°üÀ¨ÕâÐ©ÎÄ¼þ");
+                    WindowController.ShowMessage(Message.Error.STR_ERROR, "ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð©ï¿½Ä¼ï¿½");
                 }
                 else
                 {
@@ -173,7 +173,7 @@ namespace SekaiTools.UI.CutinSceneEditorInitialize
                 {
                     foreach (var folder in directories)
                     {
-                        if (folder.Equals(voice) || folder.Equals($"{voice}_rip"))
+                        if (folder.Equals(voice) || folder.Equals($"{voice}"))
                         {
                             foreach (var file in files[folder])
                             {
